@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNTIITK - Feedback Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="https://www.sntiitk.com/images/snt.jpg" alt="SNTIITK Logo">
+            </div>
+            <h1>Feedback Form</h1>
+            <p>Share your valuable feedback with us</p>
+        </header>
+
+        <div class="tabs">
+            <button class="tab-button active" onclick="openTab('feedback')">Submit Feedback</button>
+            <button class="tab-button" onclick="openTab('my-feedback')">My Feedback</button>
+            <button class="tab-button" onclick="openTab('profile')">Profile</button>
+            <button class="tab-button" onclick="openTab('faq')">FAQs</button>
+        </div>
+
+        <div id="feedback" class="tab-content active">
+            <form id="feedback-form">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="event">Event Name</label>
+                    <input type="text" id="event" name="event" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Feedback Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="rating">Rating</label>
+                    <div class="rating">
+                        <i class="far fa-star" data-rating="1"></i>
+                        <i class="far fa-star" data-rating="2"></i>
+                        <i class="far fa-star" data-rating="3"></i>
+                        <i class="far fa-star" data-rating="4"></i>
+                        <i class="far fa-star" data-rating="5"></i>
+                    </div>
+                    <input type="hidden" id="rating" name="rating" value="0">
+                </div>
+                <button type="submit" class="submit-btn">Submit Feedback</button>
+            </form>
+        </div>
+
+        <div id="my-feedback" class="tab-content">
+            <div class="feedback-list">
+                <div class="feedback-item">
+                    <h3>Annual Tech Symposium</h3>
+                    <p class="feedback-message">Great event with insightful sessions. The workshops were particularly helpful.</p>
+                    <div class="feedback-meta">
+                        <span class="date">Submitted on: 10 April 2023</span>
+                        <span class="status reviewed">Reviewed</span>
+                    </div>
+                </div>
+                <div class="feedback-item">
+                    <h3>Coding Competition</h3>
+                    <p class="feedback-message">The problems were challenging but the time limit was too short.</p>
+                    <div class="feedback-meta">
+                        <span class="date">Submitted on: 5 April 2023</span>
+                        <span class="status pending">Pending</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="profile" class="tab-content">
+            <div class="profile-card">
+                <div class="profile-header">
+                    <div class="avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h2>Anurag Patil</h2>
+                    <p>Attendee</p>
+                </div>
+                <div class="profile-details">
+                    <div class="detail">
+                        <span class="label">Email:</span>
+                        <span class="value">AnuragPatil@example.com</span>
+                    </div>
+                    <div class="detail">
+                        <span class="label">Events Attended:</span>
+                        <span class="value">5</span>
+                    </div>
+                    <div class="detail">
+                        <span class="label">Feedback Submitted:</span>
+                        <span class="value">2</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="faq" class="tab-content">
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How long does it take for feedback to be reviewed?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Typically, feedback is reviewed within 3-5 working days. During peak event seasons, it might take slightly longer.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can I edit my feedback after submission?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>No, once feedback is submitted it cannot be edited. However, you can submit additional feedback if needed.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Will my feedback be anonymous?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>No, your name and email will be visible to the organizers when reviewing feedback.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+            <!-- Organizer Login Modal -->
+            <div id="organizer-login" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>Organizer Login</h2>
+                    <form id="organizer-login-form">
+                        <div class="form-group">
+                            <label for="org-email">Organizer Email</label>
+                            <input type="email" id="org-email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="org-password">Password</label>
+                            <input type="password" id="org-password" required>
+                        </div>
+                        <button type="submit" class="submit-btn">Login</button>
+                    </form>
+                </div>
+            </div>
+    
+            <!-- Organizer Dashboard -->
+            <div id="organizer-dashboard" class="hidden">
+                <div class="dashboard-header">
+                    <h2>Organizer Dashboard</h2>
+                    <button id="logout-btn" class="logout-btn">Logout</button>
+                </div>
+    
+                <div class="dashboard-tabs">
+                    <button class="dash-tab-button active" data-tab="feedback-management">Feedback Management</button>
+                    <button class="dash-tab-button" data-tab="faq-management">FAQ Management</button>
+                </div>
+    
+                <div id="feedback-management" class="dash-tab-content active">
+                        <div class="organizer-feedback-list">
+                    </div>
+                </div>
+    
+                <div id="faq-management" class="dash-tab-content">
+                    <div class="faq-controls">
+                        <button id="add-faq-btn" class="submit-btn">Add New FAQ</button>
+                    </div>
+                    
+                    <div class="editable-faq-list">
+                    </div>
+                    
+                    <div id="add-faq-form" class="hidden">
+                        <h3>Add New FAQ</h3>
+                        <form id="new-faq-form">
+                            <div class="form-group">
+                                <label for="new-question">Question</label>
+                                <input type="text" id="new-question" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="new-answer">Answer</label>
+                                <textarea id="new-answer" required></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn">Save FAQ</button>
+                            <button type="button" id="cancel-faq" class="cancel-btn">Cancel</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Organizer Access Button -->
+            <div class="organizer-access">
+                <button id="organizer-access-btn" class="organizer-btn">Organizer Access</button>
+            </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
