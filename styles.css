@@ -1,0 +1,620 @@
+:root {
+    --primary-color: #183154;
+    --secondary-color: #172a45;
+    --accent-color: #ffffff;
+    --text-color: #ccd6f6;
+    --light-text: #e6f1ff;
+    --dark-text: #8892b0;
+    --card-bg: #112240;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo img {
+    height: 80px;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: var(--light-text);
+}
+
+header p {
+    color: var(--dark-text);
+    font-size: 1.1rem;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tab-button {
+    background-color: transparent;
+    color: var(--dark-text);
+    border: none;
+    padding: 12px 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+}
+
+.tab-button:hover {
+    color: var(--accent-color);
+}
+
+.tab-button.active {
+    background-color: var(--secondary-color);
+    color: var(--accent-color);
+    border-bottom: 2px solid var(--accent-color);
+}
+
+.tab-content {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Form Styles */
+form {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--light-text);
+    font-weight: 500;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--secondary-color);
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.submit-btn {
+    background-color:rgb(255, 255, 255);
+    color: var(--primary-color);
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.submit-btn:hover {
+    background-color: #f2b21d;
+    transform: translateY(-2px);
+}
+
+/* Rating Styles */
+.rating {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.rating i {
+    font-size: 1.5rem;
+    color: var(--dark-text);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.rating i:hover {
+    color: #f2b21d;
+    transform: scale(1.1);
+}
+
+.rating i.active {
+    color: #f2b21d;
+}
+
+/* Feedback List Styles */
+.feedback-list {
+    display: grid;
+    gap: 20px;
+}
+
+.feedback-item {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.feedback-item h3 {
+    color: var(--light-text);
+    margin-bottom: 10px;
+}
+
+.feedback-message {
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+.feedback-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    color: var(--dark-text);
+}
+
+.status {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.status.reviewed {
+    background-color: rgba(100, 255, 218, 0.1);
+    color: var(--accent-color);
+}
+
+.status.pending {
+    background-color: rgba(255, 179, 71, 0.1);
+    color: #ffb347;
+}
+
+/* Profile Styles */
+.profile-card {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.profile-header {
+    margin-bottom: 30px;
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 2.5rem;
+    color: var(--accent-color);
+}
+
+.profile-card h2 {
+    color: var(--light-text);
+    margin-bottom: 5px;
+}
+
+.profile-card p {
+    color: var(--dark-text);
+}
+
+.profile-details {
+    text-align: left;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.detail {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+.detail:last-child {
+    border-bottom: none;
+}
+
+.label {
+    color: var(--dark-text);
+    font-weight: 500;
+}
+
+.value {
+    color: var(--light-text);
+}
+
+/* FAQ Styles */
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.faq-question {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.faq-question:hover {
+    background-color: rgba(100, 255, 218, 0.05);
+}
+
+.faq-question h3 {
+    color: var(--light-text);
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.faq-question i {
+    color: var(--dark-text);
+    transition: transform 0.3s ease;
+}
+
+.faq-answer {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq-answer p {
+    color: var(--text-color);
+    padding-bottom: 20px;
+}
+
+.faq-item.active .faq-question {
+    background-color: rgba(100, 255, 218, 0.1);
+}
+
+.faq-item.active .faq-question i {
+    transform: rotate(180deg);
+    color: var(--accent-color);
+}
+
+.faq-item.active .faq-answer {
+    max-height: 200px;
+    padding-top: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .tabs {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .tab-button {
+        width: 100%;
+    }
+    
+    form {
+        padding: 20px;
+    }
+    
+    .profile-details {
+        max-width: 100%;
+    }
+    
+    .faq-question h3 {
+        font-size: 1rem;
+    }
+}
+/* Organizer Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(10, 25, 47, 0.9);
+}
+
+.modal-content {
+    background-color: var(--card-bg);
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+    animation: modalFadeIn 0.3s;
+}
+
+@keyframes modalFadeIn {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 1.5rem;
+    color: var(--dark-text);
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close:hover {
+    color: var(--accent-color);
+}
+
+.hidden {
+    display: none;
+}
+
+/* Organizer Dashboard */
+#organizer-dashboard {
+    background-color: var(--primary-color);
+    padding: 30px;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.logout-btn {
+    background-color: transparent;
+    color: var(--dark-text);
+    border: 1px solid var(--dark-text);
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.logout-btn:hover {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.dashboard-tabs {
+    display: flex;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+.dash-tab-button {
+    background: none;
+    border: none;
+    padding: 10px 20px;
+    color: var(--dark-text);
+    cursor: pointer;
+    font-weight: 500;
+    position: relative;
+}
+
+.dash-tab-button.active {
+    color: var(--accent-color);
+}
+
+.dash-tab-button.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--accent-color);
+}
+
+.dash-tab-content {
+    display: none;
+}
+
+.dash-tab-content.active {
+    display: block;
+}
+
+/* Feedback Management */
+.feedback-filters {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.feedback-filters select, 
+.feedback-filters input {
+    padding: 10px;
+    background-color: var(--secondary-color);
+    border: 1px solid var(--secondary-color);
+    color: var(--text-color);
+    border-radius: 5px;
+}
+
+.organizer-feedback-list {
+    display: grid;
+    gap: 15px;
+}
+
+.organizer-feedback-item {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.feedback-meta-organizer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: var(--dark-text);
+}
+
+.feedback-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.feedback-actions button {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+.mark-reviewed {
+    background-color: rgba(100, 255, 218, 0.1);
+    color: var(--accent-color);
+}
+
+.mark-pending {
+    background-color: rgba(255, 179, 71, 0.1);
+    color: #ffb347;
+}
+
+/* FAQ Management */
+.editable-faq-list {
+    display: grid;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.editable-faq-item {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.faq-controls {
+    margin-bottom: 20px;
+}
+
+.edit-faq-btn, .delete-faq-btn {
+    padding: 5px 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+.edit-faq-btn {
+    background-color: rgba(100, 179, 255, 0.1);
+    color: #64b3ff;
+}
+
+.delete-faq-btn {
+    background-color: rgba(255, 100, 100, 0.1);
+    color: #ff6464;
+}
+
+.cancel-btn {
+    background-color: transparent;
+    color: var(--dark-text);
+    border: 1px solid var(--dark-text);
+    margin-left: 10px;
+}
+
+/* Organizer Access Button */
+.organizer-access {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.organizer-btn {
+    background-color: white;
+    color: var(--primary-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(100, 255, 218, 0.3);
+    transition: all 0.3s;
+}
+
+.organizer-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(100, 255, 218, 0.4);
+}
